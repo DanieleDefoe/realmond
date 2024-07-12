@@ -1,4 +1,4 @@
-import { useInput } from '@/shared/hooks';
+import { useInput } from '@/shared/lib/hooks';
 import { routesApiMap } from '@/shared/lib';
 import {
   Button,
