@@ -18,9 +18,16 @@ interface UserCardProps {
 export const UserCard: FC<UserCardProps> = ({ user }) => {
   return (
     <Card>
-      <CardHeader display="flex" flexDir="column" gap="2">
+      <CardHeader display="flex" gap="4" alignItems="center">
         <Avatar name={user.username} />
-        <Heading size="md">{user.username}</Heading>
+        <Heading
+          size="md"
+          overflow="hidden"
+          textOverflow="ellipsis"
+          whiteSpace="nowrap"
+        >
+          {user.username}
+        </Heading>
       </CardHeader>
       <CardBody>
         <Link href={`mailto:${user.email}`}>{user.email}</Link>
