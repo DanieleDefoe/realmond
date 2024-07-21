@@ -10,14 +10,19 @@ import {
   Link,
 } from '@chakra-ui/react';
 import { FC } from 'react';
+import { useClick } from '../lib/useClick';
 
 interface UserCardProps {
   user: User;
 }
 
 export const UserCard: FC<UserCardProps> = ({ user }) => {
+  const onCardClick = useClick(user.id);
+
+  const outline = user.isSelected ? '2px solid lightgreen' : 'none';
+
   return (
-    <Card>
+    <Card onClick={onCardClick} sx={{ outline }}>
       <CardHeader display="flex" gap="4" alignItems="center">
         <Avatar name={user.username} />
         <Heading
